@@ -27,8 +27,10 @@ args, remaining = parser.parse_known_args()
 if args.list_devices:
     print(sd.query_devices())
     parser.exit(0)
+print(usage_line)
+print(__doc__)
 parser = argparse.ArgumentParser(
-    description=__doc__ + '\n\nSupported keys:' + usage_line,
+    description= '\n\nSupported keys:' + usage_line,
     formatter_class=argparse.RawDescriptionHelpFormatter,
     parents=[parser])
 parser.add_argument(

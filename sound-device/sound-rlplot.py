@@ -15,7 +15,7 @@ def int_or_str(text):
     except ValueError:
         return text
 
-
+print(__doc__)
 parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument(
     '-l', '--list-devices', action='store_true',
