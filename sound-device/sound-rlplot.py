@@ -107,6 +107,7 @@ try:
         device=args.device, channels=max(args.channels),
         samplerate=args.samplerate, callback=audio_callback)
     ani = FuncAnimation(fig, update_plot, interval=args.interval, blit=True)
+    print(update_plot)
     with stream:
         plt.show()
 except Exception as e:
