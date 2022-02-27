@@ -109,6 +109,7 @@ try:
     ani = FuncAnimation(fig, update_plot, interval=args.interval, blit=True)
     print(update_plot)
     with stream:
+        print(update_plot)
         plt.show()
 except Exception as e:
     parser.exit(type(e).__name__ + ': ' + str(e))
