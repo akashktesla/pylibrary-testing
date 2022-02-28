@@ -6,11 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sounddevice as sd
 
-def int_or_str(text):
-    try:
-        return int(text)
-    except ValueError:
-        return text
+
 
 list_devices = False
 channels = [1]
@@ -22,6 +18,13 @@ samplerate = None
 downsample = 10
 mapping = [c - 1 for c in channels]  # Channel numbers start with 1
 q = queue.Queue()
+
+def int_or_str(text):
+    try:
+        return int(text)
+    except ValueError:
+        return text
+
 def audio_callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
